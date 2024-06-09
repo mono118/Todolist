@@ -2,34 +2,34 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>Todoリスト</title
+    <title>Todoリスト</title>
 </head>
 <body>
     <h1>Todo</h1>
     <hr>
-    <div>
+    <div id="AddTodo">
         <h2>Todo追加</h2>
-        <label>Todo名：<input type="text" placeholder="Todo名"></label><br>
-        <label>期日：<input type="date"></label>
+        <label>Todo名：<input id="Todoname" type="text" placeholder="Todo名"></label><br>
+        <label>期日：<input id="Tododate" type="date"></label>
         <label>カテゴリ：</label>
         <select>
             <option value="明日">明日</option>
             <option value="課題">課題</option>
             <option value="やること">やること</option>
         </select><br>
-        <label>メモ：</label><textarea></textarea><br>
-        <button type="submit">追加</button><br>
+        <label>メモ：</label><textarea id="Todomemo"></textarea><br>
+        <button id="AddButton" type="submit">追加</button><br>
     </div>
     <hr>
-    <div>
+    <div id="ongoing">
         <h2>未達成リスト</h2>
-        <ul>
+        <ul id="ongoingList" class="taskList">
             
         </ul>
     </div>
-    <div>
+    <div id="compleated">
         <h2>達成済みリスト</h2>
-        <ul>
+        <ul id="completedList" class="taskList">
         </ul>
     </div>
 </body>
