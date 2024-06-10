@@ -11,8 +11,8 @@
         <h2>Todo追加</h2>
         <label>Todo名：<input id="Todoname" type="text" placeholder="Todo名"></label><br>
         <label>期日：<input id="Tododate" type="date"></label>
-        <label>カテゴリ：</label>
-        <select>
+        <label for="Todocategory">カテゴリ：</label>
+        <select id="Todocategory">
             <option value="明日">明日</option>
             <option value="課題">課題</option>
             <option value="やること">やること</option>
@@ -32,5 +32,6 @@
         <ul id="completedList" class="taskList">
         </ul>
     </div>
+    <script src="Todo.js"></script>
 </body>
 </html>
