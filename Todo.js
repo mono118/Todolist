@@ -10,6 +10,13 @@ function TodoAdd(){
     let row = document.createElement("tr");
     let button = document.createElement("input");
     button.type = "checkbox";
+    button.addEventListener("change", () => {
+        if(button.checked){
+            completedList.appendChild(goingList.removeChild(row));
+        }else{
+            goingList.appendChild(completedList.removeChild(row));
+        }
+    });
     let list = []; //tableに追加する要素を記録していく
     list.push(button);
     list.push(document.createTextNode(name.value));
