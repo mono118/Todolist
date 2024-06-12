@@ -18,6 +18,11 @@ function TodoAdd(){
             goingList.appendChild(completedList.removeChild(row));
         }
     });
+    const editButton = document.createElement("button");
+    editButton.innerText = "編集";
+    editButton.addEventListener("click", () => {
+        console.log("編集画面");
+    });
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "削除";
     deleteButton.addEventListener("click", () =>{
@@ -32,6 +37,8 @@ function TodoAdd(){
     name.value = ""; //入力ボックスの中身を空にする
     list.push(document.createTextNode(date.value));
     date.value = "";
+    list.push(document.createTextNode(category));
+    list.push(editButton);
     list.push(deleteButton);
 
     for (let i = 0; i < list.length; i++) {
