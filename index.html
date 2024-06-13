@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Todoリスト</title>
+    <link rel="stylesheet" href="Todo.css">
 </head>
 <body>
     <h1>Todo</h1>
@@ -21,6 +22,38 @@
         <button id="AddButton" type="submit">追加</button><br>
     </div>
     <hr>
+    <!-- タブの実装部分 -->
+    <div class="tab-wrapper" role="tablist">
+        <div class="tab">
+            <input id="tab-all" type="radio" name="tab-radio" role="tab" class="tab-input" value="usage" checked>
+            <h2 class="tab-head" selected><label class="tab-label" for="tab-all">すべて</label></h2>
+        </div>
+        <div class="tab">
+            <input id="tab-tomorrow" type="radio" name="tab-radio" role="tab" class="tab-input" value="usage">
+            <h2 class="tab-head"><label class="tab-label" for="tab-tomorrow">明日</label></h2>
+        </div>
+        <div class="tab">
+            <input id="tab-homework" type="radio" name="tab-radio" role="tab" class="tab-input" value="usage">
+            <h2 class="tab-head"><label class="tab-label" for="tab-homework">課題</label></h2>
+        </div>
+        <div class="tab">
+            <input id="tab-haveto" type="radio" name="tab-radio" role="tab" class="tab-input" value="usage">
+            <h2 class="tab-head"><label class="tab-label" for="tab-haveto">やること</label></h2>
+        </div>
+    </div>
+    <div class="tab-panel panel-all" role="tabpanel">
+        <div><p>すべて</p></div>
+    </div>
+    <div class="tab-panel panel-tomorrow" role="tabpanel">
+        <div><p>明日</p></div>
+    </div>
+    <div class="tab-panel panel-homework" role="tabpanel">
+        <div><p>課題</p></div>
+    </div>
+    <div class="tab-panel panel-haveto" role="tabpanel">
+        <div><p>やること</p></div>
+    </div>
+    <!--
     <div id="ongoing">
         <h2>未達成リスト</h2>
         <table id="ongoingList" class="taskList">
@@ -49,6 +82,7 @@
         </thead>
         </table>
     </div>
+    -->
     <script src="Todo.js"></script>
 </body>
 </html>

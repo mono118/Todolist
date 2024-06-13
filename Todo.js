@@ -36,7 +36,7 @@ function TodoAdd(){
             row.parentElement.removeChild(row);
         }
     });
-    
+
     let list = []; //tableに追加する要素を記録していく
     list.push(statusButton);
     list.push(document.createTextNode(name.value));
@@ -59,3 +59,40 @@ function TodoAdd(){
 
 let addButton = document.getElementById("AddButton");
 addButton.addEventListener("click", TodoAdd);
+
+//
+const tab_elements = document.getElementsByName('tab-radio');
+const tab_panel_all = document.querySelector('.panel-all');
+const tab_panel_tomorrow = document.querySelector('.panel-tomorrow');
+const tab_panel_homework = document.querySelector('.panel-homework');
+const tab_panel_haveto = document.querySelector('.panel-haveto');
+tab_elements.forEach( tab_element => {
+    tab_element.addEventListener('click', function(){
+        if (tab_element.id == 'tab-all'){
+            tab_panel_all.style.display = 'block';
+            tab_panel_tomorrow.style.display = 'none';
+            tab_panel_homework.style.display = 'none';
+            tab_panel_haveto.style.display = 'none';
+        }else if (tab_element.id == 'tab-tomorrow'){
+            tab_panel_all.style.display = 'none';
+            tab_panel_tomorrow.style.display = 'block';
+            tab_panel_homework.style.display = 'none';
+            tab_panel_haveto.style.display = 'none';
+        }else if (tab_element.id == 'tab-homework'){
+            tab_panel_all.style.display = 'none';
+            tab_panel_tomorrow.style.display = 'none';
+            tab_panel_homework.style.display = 'block';
+            tab_panel_haveto.style.display = 'none';
+        }else if (tab_element.id == 'tab-haveto'){
+            tab_panel_all.style.display = 'none';
+            tab_panel_tomorrow.style.display = 'none';
+            tab_panel_homework.style.display = 'none';
+            tab_panel_haveto.style.display = 'block';
+        }
+        // 選択されたかどうかを示すクラス名「selected」の付与と削除
+        tab_elements.forEach( tab_element => {
+            tab_element.nextElementSibling.classList.remove('selected');
+        });
+        tab_element.nextElementSibling.classList.add('selected');
+    });
+});

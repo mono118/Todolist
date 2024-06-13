@@ -1,0 +1,48 @@
+/*タブを横並びに*/
+.tab-wrapper{
+ display: flex;
+}
+.tab:not(:last-of-type) {
+ margin-right: 2px;
+}
+/*ラジオボタンを全て非表示に*/
+input[name="tab-radio"] {
+ display: none;
+}
+.tab-label {
+ display: block;
+}
+.tab-label{
+ background-color: #b4bdbf;
+ color: #525252;
+ cursor: pointer;
+ font-size: 16px;
+ padding: 10px 20px;
+ transition: .3s;
+}
+.tab-label:hover{
+ opacity: .7;
+}
+/* 選択されたタブの見た目 */
+.selected > .tab-label{
+ color: #000;
+ background-color: #e2e8eb;
+ transition: .3s;
+}
+/*タブパネル*/
+.tab-panel{
+ background-color: #e2e8eb;
+ height: 170px;
+}
+.tab-panel > div{
+ display: flex;
+ height: 100%;
+ align-items: center;
+ justify-content: center;
+}
+/*タブパネルの初期状態として選ばれてないものを非表示に*/
+.panel-tomorrow,
+.panel-homework,
+.panel-haveto{
+    display: none;
+}
