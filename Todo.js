@@ -18,6 +18,11 @@ function TodoAdd(){
             goingList.appendChild(completedList.removeChild(row));
         }
     });
+    let detaileButton = document.createElement("button");
+    detaileButton.innerText = "＋";
+    detaileButton.addEventListener("click", () => {
+        console.log("詳細情報");
+    });
     const editButton = document.createElement("button");
     editButton.innerText = "編集";
     editButton.addEventListener("click", () => {
@@ -31,6 +36,7 @@ function TodoAdd(){
             row.parentElement.removeChild(row);
         }
     });
+    
     let list = []; //tableに追加する要素を記録していく
     list.push(statusButton);
     list.push(document.createTextNode(name.value));
@@ -38,6 +44,7 @@ function TodoAdd(){
     list.push(document.createTextNode(date.value));
     date.value = "";
     list.push(document.createTextNode(category));
+    list.push(detaileButton);
     list.push(editButton);
     list.push(deleteButton);
 
