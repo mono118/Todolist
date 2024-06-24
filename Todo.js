@@ -1,11 +1,14 @@
 const goingList = document.getElementById("ongoingList");
 const completedList = document.getElementById("completedList");
 
-function TodoAdd(){
+const addButton = document.getElementById("AddButton");
+addButton.addEventListener("click", TodoList);
+
+function TodoList(){
     let name = document.getElementById("Todoname");
     let date = document.getElementById("Tododate");
     let category = document.getElementById("Todocategory").value;
-    let memo = document.getElementById("Todomemo")
+    let memo = document.getElementById("Todomemo");
 
     let row = document.createElement("tr");
 
@@ -18,7 +21,15 @@ function TodoAdd(){
             goingList.appendChild(completedList.removeChild(row));
         }
     });
-    let detaileButton = document.createElement("button");
+    let memoButton = document.createElement("button");
+    memoButton.innerText = "開く";
+    memoButton.addEventListener("click", () => {
+        if(memo.value == ""){
+            alert("メモはありません");
+            return;
+        }
+    });
+    /*let detaileButton = document.createElement("button");
     detaileButton.innerText = "＋";
     detaileButton.addEventListener("click", () => {
         console.log("詳細情報");
@@ -27,7 +38,7 @@ function TodoAdd(){
     editButton.innerText = "編集";
     editButton.addEventListener("click", () => {
         console.log("編集画面");
-    });
+    });*/
     let deleteButton = document.createElement("button");
     deleteButton.innerText = "削除";
     deleteButton.addEventListener("click", () =>{
@@ -41,11 +52,16 @@ function TodoAdd(){
     list.push(statusButton);
     list.push(document.createTextNode(name.value));
     name.value = ""; //入力ボックスの中身を空にする
-    list.push(document.createTextNode(date.value));
-    date.value = "";
+    if(date.value != ""){
+        list.push(document.createTextNode(date.value));
+        date.value = "";
+    }else{
+        list.push(document.createTextNode("なし"));
+    }
     list.push(document.createTextNode(category));
-    list.push(detaileButton);
-    list.push(editButton);
+    list.push(memoButton);
+    /*list.push(detaileButton);
+    list.push(editButton);*/
     list.push(deleteButton);
 
     for (let i = 0; i < list.length; i++) {
@@ -56,6 +72,3 @@ function TodoAdd(){
     //console.log(row);
     goingList.appendChild(row);
 }
-
-let addButton = document.getElementById("AddButton");
-addButton.addEventListener("click", TodoAdd);
