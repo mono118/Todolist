@@ -11,6 +11,10 @@ function TodoList(){
     let memo = document.getElementById("Todomemo");
 
     let row = document.createElement("tr");
+    if(name.value == ""){
+        alert("タイトルを入力してください");
+        return;
+    }
 
     let statusButton = document.createElement("input");
     statusButton.type = "checkbox";
@@ -27,6 +31,8 @@ function TodoList(){
         if(memo.value == ""){
             alert("メモはありません");
             return;
+        }else{
+            alert(memo.value);
         }
     });
     /*let detaileButton = document.createElement("button");
