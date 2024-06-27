@@ -1,3 +1,33 @@
+html{
+    font-size: 16px;
+    font-family: serif;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0 0 0 0;
+    padding-left: 20px; 
+    text-align: center;
+}
+p, li, td{
+    line-height: 1.7;
+}
+
+
 .taskList{
     text-align: center;
+}
+#ongoing{
+    background-color: rgba(255, 193, 123, 0.6);
+}
+#completed{
+    background-color: rgba(147, 255, 117, 0.6);
+}
+table{
+    margin: auto;
+}
+
+th{
+    border-bottom: 1px solid #000;
 }

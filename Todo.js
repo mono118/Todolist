@@ -66,6 +66,7 @@ function TodoList(){
     }
     list.push(document.createTextNode(category));
     list.push(memoButton);
+    memo.value = "";
     /*list.push(detaileButton);
     list.push(editButton);*/
     list.push(deleteButton);
